@@ -1,70 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:open_fashion/constants/themes/colors.dart';
+
+import 'colors.dart';
 
 mixin themes implements ThemeData {
   static ThemeData light() => ThemeData(
+        fontFamily: 'TenorSans',
         brightness: Brightness.light,
         backgroundColor: white,
-        textTheme: GoogleFonts.tenorSansTextTheme().copyWith(
-          titleLarge: const TextStyle(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
             fontSize: 19,
             fontWeight: FontWeight.w400,
+            wordSpacing: 4,
           ),
-          titleMedium: const TextStyle(
+          titleMedium: TextStyle(
+            fontSize: 17,
+            fontWeight: FontWeight.w400,
+            wordSpacing: 2,
+          ),
+          titleSmall: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+            wordSpacing: 2,
+          ),
+          bodyLarge: TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w400,
           ),
-          titleSmall: const TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
           ),
-          bodyLarge: const TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w400,
-          ),
-          bodyMedium: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
-          ),
-          bodySmall: const TextStyle(
+          bodySmall: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w400,
           ),
-          // subtitle1: const TextStyle(
-          //   fontSize: 17,
-          //   fontWeight: FontWeight.w400,
-          // ),
-          // subtitle2: const TextStyle(
-          //   fontSize: 15,
-          //   fontWeight: FontWeight.w400,
-          // ),
         ),
       );
   static ThemeData dark() => ThemeData(
+        fontFamily: 'TenorSans',
         brightness: Brightness.dark,
-        textTheme: GoogleFonts.tenorSansTextTheme().copyWith(
-          titleLarge: const TextStyle(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
             fontSize: 19,
             fontWeight: FontWeight.w400,
           ),
-          titleMedium: const TextStyle(
+          titleMedium: TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w400,
           ),
-          titleSmall: const TextStyle(
+          titleSmall: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
           ),
-          bodyLarge: const TextStyle(
+          bodyLarge: TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w400,
           ),
-          bodyMedium: const TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
           ),
-          bodySmall: const TextStyle(
+          bodySmall: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w400,
           ),

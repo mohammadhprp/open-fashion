@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:open_fashion/constants/themes/colors.dart';
+
+import '../../constants/themes/colors.dart';
+import 'divider.dart';
 
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
-  Widget divider() => SizedBox(
-        width: 124,
-        height: 40,
-        child: Image.asset('assets/images/divider.webp'),
-      );
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 280,
+      height: 300,
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -29,7 +26,7 @@ class Footer extends StatelessWidget {
               SvgPicture.asset('assets/icons/YouTube.svg'),
             ],
           ),
-          divider(),
+          const CustomDivider(),
           Column(
             children: [
               Text(
@@ -48,7 +45,7 @@ class Footer extends StatelessWidget {
               )
             ],
           ),
-          divider(),
+          const CustomDivider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -68,6 +65,7 @@ class Footer extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 10),
           Container(
             height: 45,
             width: double.infinity,
