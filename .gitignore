@@ -49,3 +49,5 @@ app.*.map.json
 
 ignore/**
 .vscode/**
+
+outputs/
