@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:open_fashion/constants/extension.dart';
-import 'package:open_fashion/constants/themes/colors.dart';
 
-import '../../utils/ui/divider.dart';
+import '../../constants/extensions/extension_export.dart';
+import '../../constants/themes/colors.dart';
+import '../../utils/view/divider.dart';
 import 'home_menu_item.dart';
 
 class HomeMenuSection extends StatefulWidget {
