@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:open_fashion/constants/extension.dart';
-import 'package:open_fashion/constants/themes/colors.dart';
+import '../constants/themes/colors.dart';
 import 'package:open_fashion/utils/utils_export.dart'
     show Header, Footer, CustomDivider;
 import 'package:open_fashion/widgets/home/home_menu.dart';
+
+import '../../constants/extensions/extension_export.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

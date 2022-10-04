@@ -1,3 +1,3 @@
-export 'ui/footer.dart';
-export 'ui/header.dart';
-export 'ui/divider.dart';
+export 'view/divider.dart';
+export 'view/footer.dart';
+export 'view/header.dart';
