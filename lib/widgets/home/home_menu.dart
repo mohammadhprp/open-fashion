@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants/extensions/extension_export.dart';
 import '../../constants/themes/colors.dart';
+import '../../models/arrival.dart';
 import '../../utils/view/divider.dart';
 import 'home_menu_item.dart';
 
@@ -97,12 +98,11 @@ class ArrivalSection extends StatelessWidget {
       children: [
         SizedBox(
           height: context.height * 0.75,
-          // width: context.width * 0.7,
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 1.1 / 1.5,
+              childAspectRatio: 1.2 / 1.5,
               crossAxisSpacing: 1.1,
               mainAxisSpacing: 13,
             ),
@@ -164,16 +164,4 @@ class ArrivalSectionItem extends StatelessWidget {
       ],
     );
   }
-}
-
-class Arrival {
-  final String image;
-  final String title;
-  final double price;
-
-  Arrival({
-    required this.image,
-    required this.title,
-    required this.price,
-  });
 }
