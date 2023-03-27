@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../constants/extensions/media_query_extension.dart';
+import '../../constants/themes/app_colors.dart';
 
-import '../../constants/extensions/extension_export.dart';
-import '../../constants/themes/colors.dart';
 import '../../models/arrival.dart';
-import '../../utils/view/divider.dart';
+import '../../components/dividers/divider.dart';
 import 'home_menu_item.dart';
 
 class HomeMenuSection extends StatefulWidget {
@@ -20,11 +20,11 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
   @override
   void initState() {
     list.addAll([
-      HomeMenu(title: 'All', isSeleted: true),
-      HomeMenu(title: 'Apparel', isSeleted: false),
-      HomeMenu(title: 'Dress', isSeleted: false),
-      HomeMenu(title: 'Tshirt', isSeleted: false),
-      HomeMenu(title: 'Bag', isSeleted: false),
+      HomeMenu(title: 'All', isSelected: true),
+      HomeMenu(title: 'Apparel', isSelected: false),
+      HomeMenu(title: 'Dress', isSelected: false),
+      HomeMenu(title: 'Tshirt', isSelected: false),
+      HomeMenu(title: 'Bag', isSelected: false),
     ]);
     super.initState();
   }
@@ -32,10 +32,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
   void _onTap(int index) {
     setState(() {
       for (var item in list) {
-        item.isSeleted = false;
+        item.isSelected = false;
       }
 
-      list[index].isSeleted = true;
+      list[index].isSelected = true;
     });
   }
 
@@ -158,7 +158,7 @@ class ArrivalSectionItem extends StatelessWidget {
         Text(
           "\$${arrival.price}",
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: secondary,
+                color: AppColors.primary,
               ),
         )
       ],

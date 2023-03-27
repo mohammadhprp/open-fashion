@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/app/app_assets.dart';
+
 class CustomDivider extends StatelessWidget {
   const CustomDivider({super.key});
 
@@ -8,7 +10,7 @@ class CustomDivider extends StatelessWidget {
     return SizedBox(
       width: 124,
       height: 50,
-      child: Image.asset('assets/images/divider.webp'),
+      child: Image.asset(AppAssets.divider),
     );
   }
 }

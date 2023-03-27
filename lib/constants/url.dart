@@ -1,20 +1,11 @@
+import 'package:flutter/foundation.dart' show immutable;
+
+@immutable
 class Url {
-  //* uncomment [domain] [api] [host] [storage] for live server
-  /*
-  static String domain = 'araamsho.ir';
-  static String api = 'https://api.$domain/v1';
-  static String host = 'http://$domain';
-  static String storage = '$host/public';
-  */
+  static const url = '';
 
-  //* comment [host] [api] [storage] for live server
+  static const storage = '$url/storage';
+  static const images = '$storage/images';
 
-  static String host = "http://10.0.2.2:8000";
-  static String api = '$host/v1';
-  static String storage = '$host/storage';
-
-  static String image = "$storage/images";
-  static String assets = '$storage/assets';
-
-  static String userAvatar = "$image/user_avatar";
+  const Url._();
 }

@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Open Fashion',
-      theme: themes.light(),
-      darkTheme: themes.dark(),
+      title: AppStrings.appTitle,
+      theme: themes.theme(),
       themeMode: ThemeMode.light,
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
