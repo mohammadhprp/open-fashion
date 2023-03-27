@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../constants/themes/colors.dart';
+import '../../constants/themes/app_colors.dart';
 
 class HomeMenuItem extends StatelessWidget {
   final HomeMenu homeMenu;
@@ -17,10 +16,10 @@ class HomeMenuItem extends StatelessWidget {
         Text(
           homeMenu.title,
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: homeMenu.isSeleted ? null : placeholder,
+                color: homeMenu.isSelected ? null : AppColors.primary,
               ),
         ),
-        if (homeMenu.isSeleted)
+        if (homeMenu.isSelected)
           Column(
             children: [
               const SizedBox(height: 5),
@@ -29,7 +28,7 @@ class HomeMenuItem extends StatelessWidget {
                 child: Container(
                   width: 5,
                   height: 5,
-                  color: secondary,
+                  color: AppColors.primary,
                 ),
               ),
             ],
@@ -41,7 +40,7 @@ class HomeMenuItem extends StatelessWidget {
 
 class HomeMenu {
   final String title;
-  bool isSeleted;
+  bool isSelected;
 
-  HomeMenu({required this.title, required this.isSeleted});
+  HomeMenu({required this.title, required this.isSelected});
 }

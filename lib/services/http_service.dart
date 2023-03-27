@@ -8,7 +8,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
 import '../constants/url.dart';
-import '../utils/func/dio_exception.dart';
+import '../utils/dio_exception.dart';
 
 enum Method { POST, GET, PUT, DELETE, PATCH }
 
@@ -22,7 +22,7 @@ class HttpService {
       };
 
   Future<HttpService> init() async {
-    _dio = Dio(BaseOptions(baseUrl: Url.api, headers: header()));
+    _dio = Dio(BaseOptions(baseUrl: Url.url, headers: header()));
     initInterceptors();
     return this;
   }

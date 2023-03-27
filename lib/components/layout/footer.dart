@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../constants/themes/colors.dart';
-import 'divider.dart';
+import '../../constants/app/app_icons.dart';
+import '../../constants/themes/app_colors.dart';
+import '../dividers/divider.dart';
 
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
@@ -19,11 +20,11 @@ class Footer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/icons/Twitter.svg'),
+              SvgPicture.asset(AppIcons.twitter),
               const SizedBox(width: 45),
-              SvgPicture.asset('assets/icons/Instagram.svg'),
+              SvgPicture.asset(AppIcons.instagram),
               const SizedBox(width: 45),
-              SvgPicture.asset('assets/icons/YouTube.svg'),
+              SvgPicture.asset(AppIcons.youtube),
             ],
           ),
           const CustomDivider(),
@@ -74,7 +75,7 @@ class Footer extends StatelessWidget {
             child: Text(
               'Copyright© OpenUI All Rights Reserved.',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: label,
+                    color: AppColors.grey400,
                   ),
             ),
           ),

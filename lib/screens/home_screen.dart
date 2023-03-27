@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import '../constants/themes/colors.dart';
-import 'package:open_fashion/utils/utils_export.dart'
-    show Header, Footer, CustomDivider;
-import 'package:open_fashion/widgets/home/home_menu.dart';
 
-import '../../constants/extensions/extension_export.dart';
+import '../components/dividers/divider.dart';
+import '../components/layout/footer.dart';
+import '../components/layout/header.dart';
+import '../constants/app/app_assets.dart';
+import '../constants/extensions/media_query_extension.dart';
+import '../constants/themes/app_colors.dart';
+import '../widgets/home/home_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               alignment: Alignment.topCenter,
               children: [
                 Image.asset(
-                  'assets/images/home-banner.webp',
+                  AppAssets.homeBanner,
                   fit: BoxFit.fitWidth,
                   width: context.width,
                   height: context.height * 0.75,
@@ -39,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        primary: Colors.black.withOpacity(0.4),
+                        backgroundColor: Colors.black.withOpacity(0.4),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -47,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text(
                         'Explore Collection'.toUpperCase(),
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              color: offWhite,
+                              color: AppColors.white100,
                             ),
                       ),
                     ),

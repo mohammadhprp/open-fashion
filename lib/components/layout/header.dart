@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../constants/app/app_assets.dart';
+
 class Header extends StatelessWidget {
   final Color? background;
   const Header({Key? key, this.background}) : super(key: key);
@@ -16,8 +18,11 @@ class Header extends StatelessWidget {
         children: [
           SvgPicture.asset('assets/icons/Menu.svg'),
           Expanded(
-            child:
-                Image.asset('assets/images/Logo.webp', width: 73, height: 32),
+            child: Image.asset(
+              AppAssets.logo,
+              width: 73,
+              height: 32,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
