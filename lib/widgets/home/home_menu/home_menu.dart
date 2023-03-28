@@ -1,67 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../constants/extensions/media_query_extension.dart';
-import '../../constants/themes/app_colors.dart';
 
-import '../../models/arrival.dart';
-import '../../components/dividers/divider.dart';
+import '../../../components/dividers/divider.dart';
+import '../../../constants/extensions/media_query_extension.dart';
+import '../../../constants/themes/app_colors.dart';
+import '../../../models/product/product.dart';
 import 'home_menu_item.dart';
 
-class HomeMenuSection extends StatefulWidget {
+class HomeMenuSection extends HookWidget {
   const HomeMenuSection({super.key});
 
   @override
-  State<HomeMenuSection> createState() => _HomeMenuSectionState();
-}
-
-class _HomeMenuSectionState extends State<HomeMenuSection> {
-  List<HomeMenu> list = [];
-
-  @override
-  void initState() {
-    list.addAll([
-      HomeMenu(title: 'All', isSelected: true),
-      HomeMenu(title: 'Apparel', isSelected: false),
-      HomeMenu(title: 'Dress', isSelected: false),
-      HomeMenu(title: 'Tshirt', isSelected: false),
-      HomeMenu(title: 'Bag', isSelected: false),
-    ]);
-    super.initState();
-  }
-
-  void _onTap(int index) {
-    setState(() {
-      for (var item in list) {
-        item.isSelected = false;
-      }
-
-      list[index].isSelected = true;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final list = useState(<HomeMenu>[]);
+
     return Column(
       children: [
-        Container(
-          height: 36,
-          alignment: Alignment.center,
-          width: context.width,
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemCount: list.length,
-            scrollDirection: Axis.horizontal,
-            separatorBuilder: (context, index) => const SizedBox(width: 10),
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () => _onTap(index),
-                child: HomeMenuItem(homeMenu: list[index]),
-              );
-            },
-          ),
+        Text(
+          'New Arrival'.toUpperCase(),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                letterSpacing: 4,
+              ),
         ),
-        const ArrivalSection(),
         const CustomDivider(),
+        Column(
+          children: [
+            Container(
+              height: 36,
+              alignment: Alignment.center,
+              width: context.width,
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: list.value.length,
+                scrollDirection: Axis.horizontal,
+                separatorBuilder: (context, index) => const SizedBox(width: 10),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      for (var item in list.value) {
+                        item.isSelected = false;
+                      }
+
+                      list.value[index].isSelected = true;
+                    },
+                    child: HomeMenuItem(homeMenu: list.value[index]),
+                  );
+                },
+              ),
+            ),
+            const ArrivalSection(),
+            const CustomDivider(),
+          ],
+        ),
       ],
     );
   }
@@ -72,23 +63,23 @@ class ArrivalSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Arrival> arrivalList = [
-      Arrival(
+    List<Product> arrivalList = [
+      Product(
         image: 'product-1.webp',
         title: '21WN reversible angora cardigan',
         price: 120,
       ),
-      Arrival(
+      Product(
         image: 'product-2.webp',
         title: '21WN reversible angora cardigan',
         price: 120,
       ),
-      Arrival(
+      Product(
         image: 'product-3.webp',
         title: '21WN reversible angora',
         price: 130,
       ),
-      Arrival(
+      Product(
         image: 'product-4.webp',
         title: 'Oblong bag',
         price: 125,
@@ -135,7 +126,7 @@ class ArrivalSection extends StatelessWidget {
 }
 
 class ArrivalSectionItem extends StatelessWidget {
-  final Arrival arrival;
+  final Product arrival;
   const ArrivalSectionItem({super.key, required this.arrival});
 
   @override

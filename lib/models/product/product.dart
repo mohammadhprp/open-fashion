@@ -1,9 +1,9 @@
-class Arrival {
+class Product {
   final String image;
   final String title;
   final double price;
 
-  Arrival({
+  Product({
     required this.image,
     required this.title,
     required this.price,

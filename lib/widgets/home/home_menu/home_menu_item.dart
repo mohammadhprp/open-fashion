@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants/themes/app_colors.dart';
+
+import '../../../constants/themes/app_colors.dart';
 
 class HomeMenuItem extends StatelessWidget {
   final HomeMenu homeMenu;
@@ -42,5 +43,8 @@ class HomeMenu {
   final String title;
   bool isSelected;
 
-  HomeMenu({required this.title, required this.isSelected});
+  HomeMenu({
+    required this.title,
+    this.isSelected = false,
+  });
 }
